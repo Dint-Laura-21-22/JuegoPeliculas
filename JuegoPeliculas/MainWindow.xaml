@@ -1,0 +1,33 @@
+﻿<Window x:Class="JuegoPeliculas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JuegoPeliculas"
+        mc:Ignorable="d"
+        Title="Adivina La Pelicula" Height="450" Width="800" MinHeight="500" MinWidth="500">
+    <Grid>
+        <TabControl>
+            <!--Pestaña para jugar-->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/assets/modificar.ico" Width="30"></Image>
+                        <TextBlock Text="Jugar" Height="15" FontFamily="Comic Sans" Foreground="Blue"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Image Source="assets/fondo-juego-espacial-paisaje-planeta_107791-1700.jpg" Stretch="UniformToFill"></Image>
+                
+            </TabItem>
+            <!--Pestaña de gestion-->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/assets/gestionar.ico" Width="30"></Image>
+                        <TextBlock Text="Gestionar" Height="15" FontFamily="Times New Roman" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
