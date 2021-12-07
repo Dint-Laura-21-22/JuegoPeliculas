@@ -17,7 +17,7 @@
                     </StackPanel>
                 </TabItem.Header>
                 <DockPanel LastChildFill="False">
-                <Image Source="assets/fondo-juego-espacial-paisaje-planeta_107791-1700.jpg" Stretch="UniformToFill" ></Image>
+                    <Image Source="assets/fondo-juego-espacial-paisaje-planeta_107791-1700.jpg" Stretch="UniformToFill"  Opacity="0.5"></Image>
                     <TextBlock FontSize="80" DockPanel.Dock="Top">Hola</TextBlock>
                 </DockPanel>
             </TabItem>
@@ -29,7 +29,7 @@
                         <TextBlock Text="Gestionar" Height="15" FontFamily="Times New Roman" Foreground="Red"></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Image Source="/assets/configuracion.jpg" Stretch="UniformToFill"></Image>
+                <Image Source="/assets/configuracion.jpg" Stretch="UniformToFill"  Opacity="0.5"></Image>
             </TabItem>
         </TabControl>
     </Grid>
