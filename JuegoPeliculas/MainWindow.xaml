@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JuegoPeliculas"
         mc:Ignorable="d"
-        Title="Adivina La Pelicula" Height="450" Width="800" MinHeight="500" MinWidth="500">
+        Title="Adivina La Pelicula" Height="450" Width="800" MinHeight="500" MinWidth="500"
+        Background="Bisque">
     <Grid>
         <TabControl>
             <!--Pestaña para jugar-->
@@ -16,10 +17,11 @@
                         <TextBlock Text="Jugar" Height="15" FontFamily="Comic Sans" Foreground="Blue"></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <DockPanel LastChildFill="False">
-                    <Image Source="assets/fondo-juego-espacial-paisaje-planeta_107791-1700.jpg" Stretch="UniformToFill"  Opacity="0.5"></Image>
-                    <TextBlock FontSize="80" DockPanel.Dock="Top">Hola</TextBlock>
-                </DockPanel>
+                <TabItem.Content>
+                    <DockPanel>
+                    <TextBlock Text="Hola"></TextBlock>
+                    </DockPanel>
+                </TabItem.Content>
             </TabItem>
             <!--Pestaña de gestion-->
             <TabItem>
