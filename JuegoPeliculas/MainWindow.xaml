@@ -16,8 +16,10 @@
                         <TextBlock Text="Jugar" Height="15" FontFamily="Comic Sans" Foreground="Blue"></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Image Source="assets/fondo-juego-espacial-paisaje-planeta_107791-1700.jpg" Stretch="UniformToFill"></Image>
-                
+                <DockPanel LastChildFill="False">
+                <Image Source="assets/fondo-juego-espacial-paisaje-planeta_107791-1700.jpg" Stretch="UniformToFill" ></Image>
+                    <TextBlock FontSize="80" DockPanel.Dock="Top">Hola</TextBlock>
+                </DockPanel>
             </TabItem>
             <!--Pestaña de gestion-->
             <TabItem>
@@ -27,6 +29,7 @@
                         <TextBlock Text="Gestionar" Height="15" FontFamily="Times New Roman" Foreground="Red"></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <Image Source="/assets/configuracion.jpg" Stretch="UniformToFill"></Image>
             </TabItem>
         </TabControl>
     </Grid>
