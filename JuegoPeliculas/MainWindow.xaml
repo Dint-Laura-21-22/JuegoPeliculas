@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JuegoPeliculas"
         mc:Ignorable="d"
-        Title="Adivina La Pelicula" Height="450" Width="800" MinHeight="500" MinWidth="500"
+        Title="Adivina La Pelicula" Height="564.5" Width="821" MinHeight="500" MinWidth="500"
         Background="Bisque">
     <Window.Resources>
         <Style TargetType="{x:Type TextBlock}" x:Key="Titulos">
@@ -21,7 +21,19 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
-
+        </Style>
+        <Style TargetType="{x:Type Image}" x:Key="FlechaAdelantarStyle">
+            <Setter Property="Width" Value="50"></Setter>
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
     <Grid>
@@ -38,7 +50,7 @@
                 <!--Contenido Pestaña Juego-->
                 <TabItem.Content>
                     <DockPanel Margin="10" LastChildFill="False">
-                        <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
+                        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Margin="0,0,0,77" Width="298">
                             <TextBlock Text="Cartel de la película" Style="{StaticResource Titulos}"></TextBlock>
                             <Image Source="/assets/configuracion.jpg" Width="296" Height="355"
                                Stretch="Fill"></Image>
@@ -51,7 +63,7 @@
                                 <TextBlock  />
                             </Border>
                         </StackPanel>
-                        <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" Height="247">
+                        <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" Height="297">
                             <TextBlock Text="Titulo de la película" Style="{StaticResource Titulos}" Width="136" Height="33" HorizontalAlignment="Left" Margin="10,0,0,0"></TextBlock>
                             <StackPanel Orientation="Horizontal">
                                 <TextBox Height="30" Width="293" HorizontalAlignment="Left" Margin="10,0,0,0"/>
@@ -60,8 +72,15 @@
                             <CheckBox Content="Ver Pista" Margin="10" FontFamily="Times New Roman"></CheckBox>
                             <TextBox Text="Pista descubierta" Margin="10"></TextBox>
                             <Image Height="50" Margin="194,0,210,0"/>
-                            <TextBlock Style="{StaticResource Titulos}" Text="Genero" HorizontalAlignment="Right" Margin="0,0,196,0" Height="31" Width="80">
+                            <TextBlock Style="{StaticResource Titulos}" Text="Genero" HorizontalAlignment="Right" Margin="0,0,196,0" Height="31" Width="99">
                             </TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="" DockPanel.Dock="Bottom">
+                            <Image x:Name="FlecharetrocesoImage"  Source="/assets/arrow.ico" Width="50" MouseLeftButtonUp="FlecharetrocesoImage_MouseLeftButtonUp"></Image>
+                            <TextBlock x:Name="Texto1TextBlock" Text="1" FontSize="50"></TextBlock>
+                            <TextBlock x:Name="Texto2TextBlock" Text="/" FontSize="50"></TextBlock>
+                            <TextBlock x:Name="Texto3TextBlock" Text="3" FontSize="50"></TextBlock>
+                            <Image x:Name="FlechaAdelantar" Source="/assets/arrow.ico" Width="50" Style="{StaticResource FlechaAdelantarStyle}" MouseLeftButtonUp="FlechaAdelantar_MouseLeftButtonUp"/>
                         </StackPanel>
                     </DockPanel>
                 </TabItem.Content>

@@ -134,5 +134,8 @@
   <ItemGroup>
     <Resource Include="assets\configuracion.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\arrow.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
