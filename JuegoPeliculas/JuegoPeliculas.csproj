@@ -82,7 +82,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MainWindowsMv.cs" />
-    <Compile Include="recursos\Pelicula.cs" />
+    <Compile Include="Pelicula.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -119,7 +119,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="recursos\peliculas.json" />
+    <None Include="peliculas.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
