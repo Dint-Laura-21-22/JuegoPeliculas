@@ -37,7 +37,7 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <TabControl>
+        <TabControl Background="BlanchedAlmond">
             <!--Pestaña para jugar-->
             <TabItem>
                 <!--Pestaña Juego-->
@@ -50,6 +50,9 @@
                 <!--Contenido Pestaña Juego-->
                 <TabItem.Content>
                     <DockPanel Margin="10" LastChildFill="False">
+                        <DockPanel.Background>
+                            <ImageBrush ImageSource="/assets/fondo-juego-espacial.jpg" Stretch="UniformToFill" Opacity="0.7"></ImageBrush>
+                        </DockPanel.Background>
                         <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Margin="0,0,0,77" Width="298">
                             <TextBlock Text="Cartel de la película" Style="{StaticResource Titulos}"></TextBlock>
                             <Image Source="/assets/configuracion.jpg" Width="296" Height="355"
@@ -75,12 +78,12 @@
                             <TextBlock Style="{StaticResource Titulos}" Text="Genero" HorizontalAlignment="Right" Margin="0,0,196,0" Height="31" Width="99">
                             </TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="" DockPanel.Dock="Bottom">
-                            <Image x:Name="FlecharetrocesoImage"  Source="/assets/arrow.ico" Width="50" MouseLeftButtonUp="FlecharetrocesoImage_MouseLeftButtonUp"></Image>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                            <Image x:Name="FlecharetrocesoImage"  Source="/assets/arrow.ico" Width="50"></Image>
                             <TextBlock x:Name="Texto1TextBlock" Text="1" FontSize="50"></TextBlock>
                             <TextBlock x:Name="Texto2TextBlock" Text="/" FontSize="50"></TextBlock>
                             <TextBlock x:Name="Texto3TextBlock" Text="3" FontSize="50"></TextBlock>
-                            <Image x:Name="FlechaAdelantar" Source="/assets/arrow.ico" Width="50" Style="{StaticResource FlechaAdelantarStyle}" MouseLeftButtonUp="FlechaAdelantar_MouseLeftButtonUp"/>
+                            <Image x:Name="FlechaAdelantar" Source="/assets/arrow.ico" Width="50"/>
                         </StackPanel>
                     </DockPanel>
                 </TabItem.Content>
@@ -93,7 +96,11 @@
                         <TextBlock Text="Gestionar" Height="15" FontFamily="Times New Roman" Foreground="Red"></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Image Source="/assets/configuracion.jpg" Stretch="UniformToFill"  Opacity="0.5"></Image>
+                <DockPanel>
+                    <DockPanel.Background>
+                        <ImageBrush ImageSource="/assets/configuracion.jpg" Stretch="UniformToFill" Opacity="0.7"></ImageBrush>
+                    </DockPanel.Background>
+                </DockPanel>
             </TabItem>
         </TabControl>
     </Grid>

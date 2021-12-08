@@ -125,7 +125,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\fondo-juego-espacial-paisaje-planeta_107791-1700.jpg" />
+    <Resource Include="assets\fondo-juego-espacial.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\gestionar.ico" />
