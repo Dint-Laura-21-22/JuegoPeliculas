@@ -71,7 +71,7 @@
                             <TextBlock Text="Titulo de la película" Style="{StaticResource Titulos}" Width="136" Height="33" HorizontalAlignment="Left" Margin="10,0,0,0"></TextBlock>
                             <StackPanel Orientation="Horizontal">
                                 <TextBox Height="30" Width="293" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-                                <Button Content="Validar" Height="30" Width="50" HorizontalAlignment="Right" Margin="10"/>
+                                <Button Content="Validar" Height="30" Width="50" HorizontalAlignment="Right" Margin="10" Template="{DynamicResource BotonesJuego}"/>
                             </StackPanel>
                             <CheckBox Content="Ver Pista" Margin="10" FontFamily="Times New Roman"></CheckBox>
                             <TextBox Text="Pista descubierta" Margin="10"></TextBox>
@@ -82,7 +82,7 @@
                                 <Image x:Name="FlecharetrocesoImage"  Source="/assets/arrow.ico" Width="32"/>
                                 <TextBlock Style="{StaticResource Titulos}" x:Name="Texto1TextBlock" Text="1" FontSize="30"></TextBlock>
                                 <TextBlock Style="{StaticResource Titulos}" x:Name="Texto2TextBlock" Text="/" FontSize="30"></TextBlock>
-                                <TextBlock Style="{StaticResource Titulos}" x:Name="Texto3TextBlock" Text="3" FontSize="30"></TextBlock>
+                                <TextBlock Style="{StaticResource Titulos}" x:Name="Texto3TextBlock" Text="5" FontSize="30"></TextBlock>
                                 <Image x:Name="FlechaAdelantar" Source="/assets/arrow.ico"  Style="{StaticResource FlechaAdelantarStyle}" Width="32"/>
                             </StackPanel>
                         </StackPanel>
@@ -104,6 +104,7 @@
                     <DockPanel.Background>
                         <ImageBrush ImageSource="/assets/configuracion.jpg" Stretch="UniformToFill" Opacity="0.7"></ImageBrush>
                     </DockPanel.Background>
+                    
                     <!--Aquí va un list box mirar ejemplo comida-->
                 </DockPanel>
             </TabItem>
