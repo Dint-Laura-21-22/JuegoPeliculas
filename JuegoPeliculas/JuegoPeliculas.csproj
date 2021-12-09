@@ -137,5 +137,16 @@
   <ItemGroup>
     <Resource Include="assets\arrow.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\action.png" />
+    <Resource Include="assets\comedia.ico" />
+    <Resource Include="assets\drama.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\Terror.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\scifi.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
