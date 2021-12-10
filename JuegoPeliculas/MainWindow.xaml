@@ -10,8 +10,10 @@
         Width="858.5"
         MinHeight="600"
         MinWidth="600"
-        Background="MediumPurple">
+        Background="MediumPurple"
+        Icon="/assets/iconos/icono.ico">
     <Window.Resources>
+        <!--Titulos-->
         <Style TargetType="{x:Type TextBlock}"
                x:Key="Titulos">
             <Setter Property="FontFamily"
@@ -33,6 +35,8 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
+            <Setter Property="HorizontalAlignment"
+                    Value="Center"></Setter>
         </Style>
         <Style TargetType="{x:Type Image}"
                x:Key="FlechaAdelantarStyle">
@@ -49,9 +53,24 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <!--Estilo botones-->
         <Style TargetType="{x:Type Button}"
                x:Key="EstiloBotonesJuego">
-
+            <Setter Property="Background"
+                    Value="#B0F2C2"></Setter>
+            <Setter Property="FontWeight"
+                    Value="Bold"></Setter>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1"
+                                         StartPoint="0.5,0">
+                        <GradientStop Color="Black"
+                                      Offset="0" />
+                        <GradientStop Color="#FF1207FD"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
     <Grid>
@@ -61,7 +80,7 @@
                 <!--Pestaña Juego-->
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/assets/modificar.ico"
+                        <Image Source="/assets/iconos/modificar.ico"
                                Width="30"></Image>
                         <TextBlock Text="Jugar"
                                    Height="15"
@@ -71,25 +90,25 @@
                 </TabItem.Header>
                 <!--Contenido Pestaña Juego-->
                 <TabItem.Content>
-                    <DockPanel Margin="10"
-                               LastChildFill="False"
-                               RenderTransformOrigin="0.498,0.345">
+                    <DockPanel LastChildFill="False">
                         <DockPanel.Background>
                             <ImageBrush ImageSource="/assets/fondo-juego-espacial.jpg"
                                         Stretch="UniformToFill"
                                         Opacity="0.7"></ImageBrush>
                         </DockPanel.Background>
-                        <StackPanel DockPanel.Dock="Left"
-                                    Orientation="Vertical"
-                                    Margin="0,0,0,77"
-                                    Width="298">
-                            <TextBlock Text="Cartel de la película"
-                                       Style="{StaticResource Titulos}"></TextBlock>
-                            <Image Source="/assets/configuracion.jpg"
-                                   Width="296"
-                                   Height="355"
-                                   Stretch="Fill"></Image>
-                        </StackPanel>
+                        <Border DockPanel.Dock="Left"
+                                Width="296"
+                                Height="455"
+                                Margin="20">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Cartel de la película"
+                                           Style="{StaticResource Titulos}"
+                                           FontSize="30"></TextBlock>
+                                <Image Source="/assets/simpson.png"
+                                       Stretch="UniformToFill"
+                                       Margin="20"></Image>
+                            </StackPanel>
+                        </Border>
                         <StackPanel DockPanel.Dock="Top"
                                     Orientation="Vertical"
                                     HorizontalAlignment="Left"
@@ -100,10 +119,12 @@
                                        Margin="0,0,320,0"
                                        Height="34">Puntuacion</TextBlock>
                             <Button Template="{DynamicResource BotonesJuego}"
+                                    Style="{StaticResource EstiloBotonesJuego}"
                                     Content="Nueva Partida"
                                     HorizontalAlignment="Right"
                                     Margin="10" />
                             <Button  Template="{DynamicResource BotonesJuego}"
+                                     Style="{StaticResource EstiloBotonesJuego}"
                                      Content="Finalizar partida"
                                      HorizontalAlignment="Right"></Button>
                             <Border BorderBrush="Black"
@@ -134,7 +155,8 @@
                                         Width="50"
                                         HorizontalAlignment="Right"
                                         Margin="10"
-                                        Template="{DynamicResource BotonesJuego}" />
+                                        Template="{DynamicResource BotonesJuego}"
+                                        Style="{StaticResource EstiloBotonesJuego}" />
                             </StackPanel>
                             <CheckBox Content="Ver Pista"
                                       Margin="10"
@@ -154,25 +176,25 @@
                                        Source="/assets/Terror.png" />
                                 <Image Height="50"
                                        Width="50"
-                                       Source="/assets/drama.ico" />
-                                <Image Height="50"
-                                       Width="50"
-                                       Source="/assets/comedia.ico" />
+                                       Source="/assets/iconos/drama.ico" />
+                                <Image Height="60"
+                                       Width="60"
+                                       Source="/assets/iconos/comedia.ico" />
 
                                 <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Genero">
+                                           Text="Accion">
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Genero2">
+                                           Text="Ciencia-Ficcion">
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Genero3">
+                                           Text="Terror">
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Genero4">
+                                           Text="Drama">
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Genero5">
+                                           Text="Comedia">
                                 </TextBlock>
                             </UniformGrid>
                             <StackPanel Orientation="Horizontal"
@@ -182,7 +204,7 @@
                                         VerticalAlignment="Center"
                                         Width="191">
                                 <Image x:Name="FlecharetrocesoImage"
-                                       Source="/assets/arrow.ico"
+                                       Source="/assets/iconos/arrow.ico"
                                        Width="32" />
                                 <TextBlock Style="{StaticResource Titulos}"
                                            x:Name="Texto1TextBlock"
@@ -197,7 +219,7 @@
                                            Text="5"
                                            FontSize="30"></TextBlock>
                                 <Image x:Name="FlechaAdelantar"
-                                       Source="/assets/arrow.ico"
+                                       Source="/assets/iconos/arrow.ico"
                                        Style="{StaticResource FlechaAdelantarStyle}"
                                        Width="32" />
                             </StackPanel>
@@ -211,7 +233,7 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/assets/gestionar.ico"
+                        <Image Source="/assets/iconos/gestionar.ico"
                                Width="30"></Image>
                         <TextBlock Text="Gestionar"
                                    Height="15"
@@ -226,8 +248,43 @@
                                     Stretch="UniformToFill"
                                     Opacity="0.7"></ImageBrush>
                     </DockPanel.Background>
+                    <Grid>
+                    <Grid.ColumnDefinitions>
+                       
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="300"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                    <ListBox x:Name="platosListBox"
+                             Grid.Column="0"
+                             ItemsSource="{Binding Path=ListaPlatos}"
+                             SelectedItem="{Binding Path=PlatoSeleccionado}"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             Margin="10">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
 
-                    <!--Aquí va un list box mirar ejemplo comida-->
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0">Titulo de la pelicula</TextBlock>
+                        </Grid>
+                    </Grid>
                 </DockPanel>
             </TabItem>
 

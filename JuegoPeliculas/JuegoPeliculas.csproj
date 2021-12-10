@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>assets\iconos\icono.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -128,25 +131,34 @@
     <Resource Include="assets\fondo-juego-espacial.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\gestionar.ico" />
-    <Resource Include="assets\modificar.ico" />
+    <Resource Include="assets\iconos\gestionar.ico" />
+    <Resource Include="assets\iconos\modificar.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\configuracion.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\arrow.ico" />
+    <Resource Include="assets\iconos\arrow.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\action.png" />
-    <Resource Include="assets\comedia.ico" />
-    <Resource Include="assets\drama.ico" />
+    <Resource Include="assets\iconos\comedia.ico" />
+    <Resource Include="assets\iconos\drama.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\Terror.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\scifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\iconos\icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\imagenes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\simpson.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
