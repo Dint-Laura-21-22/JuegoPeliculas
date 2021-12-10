@@ -310,7 +310,7 @@
                             <TextBlock Style="{StaticResource TitulosGestion}"
                                        Grid.Column="0"
                                        Grid.Row="0"
-                                       Width="163">Titulo de la pelicula</TextBlock>
+                                       Width="165">Titulo de la pelicula</TextBlock>
                         </Grid>
                     </Grid>
                 </DockPanel>
