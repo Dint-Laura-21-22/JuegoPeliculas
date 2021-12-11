@@ -351,18 +351,49 @@
                                 <Button
                                         HorizontalAlignment="Right"
                                     Template="{DynamicResource BotonesJuego}"
-                                    Style="{StaticResource EstiloBotonesJuego}" Content="Examinar" Height="36" Width="72"/>
+                                    Style="{StaticResource EstiloBotonesJuego}" Content="Examinar" Height="36" Width="72"  VerticalAlignment="Top"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                                <!--Aquí binding para dificultad-->
                                 <ComboBox HorizontalAlignment="Left" Width="80" Text="Facil">
                                     <ComboBoxItem Content="Facil"></ComboBoxItem>
                                     <ComboBoxItem Content="Medio"></ComboBoxItem>
                                     <ComboBoxItem Content="Dificil"></ComboBoxItem>
-                                    
+                                </ComboBox>
+                                <TextBlock Style="{StaticResource ResourceKey=TitulosGestion}" Text="Generos" Margin="0,0,10,0"/>
+                                <!--Aquí binding para generos-->
+                                <ComboBox HorizontalAlignment="Right" Text="Generos" Width="113">
+                                    <ComboBoxItem Content="Terror"></ComboBoxItem>
+                                    <ComboBoxItem Content="Comedia"></ComboBoxItem>
+                                    <ComboBoxItem Content="Ciencia ficcion"></ComboBoxItem>
+                                    <ComboBoxItem Content="Drama"></ComboBoxItem>
+                                    <ComboBoxItem Content="Accion"></ComboBoxItem>
                                 </ComboBox>
                             </StackPanel>
 
                         </Grid>
+                        <StackPanel Orientation="Vertical" Grid.Column="1">
+                            <Button Content="Cargar de Json"
+                                    Style="{StaticResource EstiloBotonesJuego}"
+                                    Template="{DynamicResource BotonesJuego}"
+                                    Margin="10"></Button>
+                            <Button Style="{StaticResource EstiloBotonesJuego}"
+                                    Template="{DynamicResource BotonesJuego}"
+                                    Margin="10"
+                                    Content="Guardar en Json"></Button>
+                            <Button Style="{StaticResource EstiloBotonesJuego}"
+                                    Template="{DynamicResource BotonesJuego}"
+                                    Content="Añadir Pelicula"
+                                    Margin="10"></Button>
+                            <Button Style="{StaticResource EstiloBotonesJuego}"
+                                    Template="{DynamicResource BotonesJuego}"
+                                    Content="Editar Pelicula"
+                                    Margin="50"></Button>
+                            <Button Style="{StaticResource EstiloBotonesJuego}"
+                                    Template="{DynamicResource BotonesJuego}"
+                                    Content="Cargar de Json"
+                                    Margin="20"></Button>
+                        </StackPanel>
                     </Grid>
                 </DockPanel>
             </TabItem>
