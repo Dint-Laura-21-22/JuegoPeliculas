@@ -11,7 +11,9 @@
         MinHeight="600"
         MinWidth="600"
         Background="MediumPurple"
-        Icon="/assets/iconos/icono.ico">
+        Icon="/assets/iconos/icono.ico"
+        MaxHeight="1000"
+        MaxWidth="1200">
     <Window.Resources>
         <!--Titulos-->
         <Style TargetType="{x:Type TextBlock}"
@@ -96,6 +98,19 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
+        </Style>
+        <!-- Estilo TextBox gestion-->
+        <Style TargetType="{x:Type TextBox}"
+               x:Key="EstiloTextBoxGestion">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FF727CBB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="3"></Setter>
         </Style>
     </Window.Resources>
     <Grid>
@@ -275,7 +290,6 @@
                     </DockPanel.Background>
                     <Grid>
                         <Grid.ColumnDefinitions>
-
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition Width="300"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
@@ -296,7 +310,7 @@
                                 </ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
                         </ListBox>
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Margin="5">
                             <Grid.ColumnDefinitions>
 
                                 <ColumnDefinition Width="161*" />
@@ -316,7 +330,38 @@
                                        Grid.Column="0"
                                        Grid.Row="1"
                                        Width="165">Pista de la pelicula</TextBlock>
-                            
+                            <TextBlock Style="{StaticResource TitulosGestion}"
+                                       Grid.Column="0"
+                                       Grid.Row="2">Imágen de la pelicula</TextBlock>
+                            <TextBlock Style="{StaticResource TitulosGestion}"
+                                       Grid.Column="0"
+                                       Grid.Row="3">Nivel de dificultad</TextBlock>
+                            <TextBox Grid.Column="1"
+                                     Grid.Row="0" Template="{DynamicResource TextBoxGestion}"
+                                     Style="{StaticResource EstiloTextBoxGestion}">
+                            </TextBox>
+                            <TextBox Grid.Column="1"
+                                     Grid.Row="1" Template="{DynamicResource TextBoxGestion}"
+                                     Style="{StaticResource EstiloTextBoxGestion}">
+                            </TextBox>
+                            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
+                                <TextBox HorizontalAlignment="Left"
+                                      Template="{DynamicResource TextBoxGestion}"
+                                         Style="{StaticResource EstiloTextBoxGestion}" Width="293" Margin="0,0,3,0" Padding="2" />
+                                <Button
+                                        HorizontalAlignment="Right"
+                                    Template="{DynamicResource BotonesJuego}"
+                                    Style="{StaticResource EstiloBotonesJuego}" Content="Examinar" Height="36" Width="72"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" Width="80">
+                                    <ComboBoxItem Content="Facil"></ComboBoxItem>
+                                    <ComboBoxItem Content="Medio"></ComboBoxItem>
+                                    <ComboBoxItem Content="Dificil"></ComboBoxItem>
+                                    
+                                </ComboBox>
+                            </StackPanel>
+
                         </Grid>
                     </Grid>
                 </DockPanel>
