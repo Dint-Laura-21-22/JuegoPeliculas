@@ -354,7 +354,7 @@
                                     Style="{StaticResource EstiloBotonesJuego}" Content="Examinar" Height="36" Width="72"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-                                <ComboBox HorizontalAlignment="Left" Width="80">
+                                <ComboBox HorizontalAlignment="Left" Width="80" Text="Facil">
                                     <ComboBoxItem Content="Facil"></ComboBoxItem>
                                     <ComboBoxItem Content="Medio"></ComboBoxItem>
                                     <ComboBoxItem Content="Dificil"></ComboBoxItem>
