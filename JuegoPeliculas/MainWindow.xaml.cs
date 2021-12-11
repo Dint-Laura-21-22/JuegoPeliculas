@@ -27,5 +27,15 @@ namespace JuegoPeliculas
             InitializeComponent();
             this.DataContext = vm;
         }
+
+        private void FlecharetrocesoImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            vm.Anterior();
+        }
+
+        private void FlechaAdelantar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            vm.Siguiente();
+        }
     }
 }

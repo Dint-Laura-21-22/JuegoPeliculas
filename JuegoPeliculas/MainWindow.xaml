@@ -144,7 +144,7 @@
                                 <TextBlock Text="Cartel de la película"
                                            Style="{StaticResource Titulos}"
                                            FontSize="30"></TextBlock>
-                                <Image Source="/assets/simpson.png"
+                                <Image Source= "{Binding Path=PeliculaSeleccionada}"
                                        Stretch="UniformToFill"
                                        Margin="20"></Image>
                             </StackPanel>
@@ -245,7 +245,7 @@
                                         Width="191">
                                 <Image x:Name="FlecharetrocesoImage"
                                        Source="/assets/iconos/arrow.ico"
-                                       Width="32" />
+                                       Width="32" MouseLeftButtonUp="FlecharetrocesoImage_MouseLeftButtonUp" />
                                 <TextBlock Style="{StaticResource Titulos}"
                                            x:Name="Texto1TextBlock"
                                            Text="1"
@@ -261,7 +261,7 @@
                                 <Image x:Name="FlechaAdelantar"
                                        Source="/assets/iconos/arrow.ico"
                                        Style="{StaticResource FlechaAdelantarStyle}"
-                                       Width="32" />
+                                       Width="32" MouseLeftButtonUp="FlechaAdelantar_MouseLeftButtonUp" />
                             </StackPanel>
                         </StackPanel>
 
