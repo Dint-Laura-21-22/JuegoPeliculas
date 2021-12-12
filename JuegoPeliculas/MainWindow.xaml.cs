@@ -20,11 +20,12 @@ namespace JuegoPeliculas
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowsMv vm = new MainWindowsMv();
+        private MainWindowsMv vm;
+
         public MainWindow()
         {
-
             InitializeComponent();
+            vm = new MainWindowsMv();
             this.DataContext = vm;
         }
 

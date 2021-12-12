@@ -32,6 +32,39 @@ namespace JuegoPeliculas
             }
         }
 
+        private ObservableCollection<String> dificultad = new ObservableCollection<string>();
+
+        public ObservableCollection<String> Dificultad
+        {
+            get { return dificultad; }
+            set { SetProperty(ref dificultad, value); }
+        }
+
+        public void CrearListaDificultad()
+        {
+            Dificultad.Add("Facil");
+            Dificultad.Add("Normal");
+            Dificultad.Add("Dificil");
+        }
+
+        private ObservableCollection<String> genero = new ObservableCollection<string>();
+
+        public ObservableCollection<String> Genero
+        {
+            get { return genero; }
+            set { SetProperty(ref genero, value); }
+        }
+
+        public void CrearListaGeneros()
+        {
+            Genero.Add("Accion");
+            Genero.Add("Drama");
+            Genero.Add("Terror");
+            Genero.Add("Comedia");
+            Genero.Add("Ciencia Ficcion");
+        }
+
+
         private Pelicula peliculaSeleccionada;
 
         public Pelicula PeliculaSeleccionada
@@ -63,6 +96,8 @@ namespace JuegoPeliculas
 
         public MainWindowsMv()
         {
+            CrearListaGeneros();
+            CrearListaDificultad();
             ListaPeliculas = CargarListaPeliculas();
             PeliculaSeleccionada = ListaPeliculas[0];
             Total = ListaPeliculas.Count;
