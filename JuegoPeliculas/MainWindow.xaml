@@ -142,7 +142,8 @@
                     Value="3"></Setter>
         </Style>
         <!--DataTemplate para las peliculas de gestión-->
-        <DataTemplate x:Name="PlantillaItemsGestion" DataType="{x:Type local:Pelicula}">
+        <DataTemplate x:Name="PlantillaItemsGestion"
+                      DataType="{x:Type local:Pelicula}">
             <Border BorderThickness="1"
                     BorderBrush="Black"
                     Background="AliceBlue"
@@ -166,6 +167,14 @@
                 </StackPanel>
             </Border>
         </DataTemplate>
+        <!--Triger para opacidad pista-->
+        <Style TargetType="TextBox" x:Name="PistaenTextBox">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <BlurEffect Radius="5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <TabControl Background="MediumPurple">
@@ -200,7 +209,12 @@
                                            FontSize="30"></TextBlock>
                                 <Image Source="{Binding Path=PeliculaSeleccionada.Cartel}"
                                        Stretch="UniformToFill"
-                                       Margin="20"></Image>
+                                       Margin="20">
+                                    <Image.Effect>
+                                        <BlurEffect Radius="50" />
+                                    </Image.Effect>
+
+                                </Image>
                             </StackPanel>
                         </Border>
                         <StackPanel DockPanel.Dock="Top"
@@ -252,28 +266,22 @@
                                         Template="{DynamicResource BotonesJuego}"
                                         Style="{StaticResource EstiloBotonesJuego}" />
                             </StackPanel>
-                            <CheckBox Content="Ver Pista"
+                            <CheckBox x:Name="PistaCheckBox" 
+                                Content="Ver Pista"
                                       Margin="10"
                                       FontFamily="Times New Roman"></CheckBox>
-                            <TextBox Text="{Binding Path= PeliculaSeleccionada.Pista}"
-                                     Margin="10"></TextBox>
+                            <TextBox x:Name="PistaTextBox"
+                                     
+                                     Text="{Binding Path=PeliculaSeleccionada.Pista}"
+                                     Margin="10">
+                            </TextBox>
                             <UniformGrid HorizontalAlignment="Center"
                                          Rows="2">
-                                <Image Height="50"
-                                       Width="50"
-                                       Source="/assets/action.png" />
-                                <Image Height="50"
-                                       Width="50"
-                                       Source="/assets/scifi.png" />
-                                <Image Height="50"
-                                       Width="50"
-                                       Source="/assets/Terror.png" />
-                                <Image Height="50"
-                                       Width="50"
-                                       Source="/assets/iconos/drama.ico" />
-                                <Image Height="60"
-                                       Width="60"
-                                       Source="/assets/iconos/comedia.ico" />
+                                <Image/>
+                                <Image/>
+                                <Image/>
+                                <Image/>
+                                <Image/>
 
                                 <TextBlock Style="{StaticResource Titulos}"
                                            Text="Accion">

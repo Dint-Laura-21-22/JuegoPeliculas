@@ -144,22 +144,20 @@
     <Resource Include="assets\iconos\arrow.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\action.png" />
-    <Resource Include="assets\iconos\comedia.ico" />
-    <Resource Include="assets\iconos\drama.ico" />
+    <Resource Include="assets\generos\action.png" />
+    <Resource Include="assets\generos\comedia.ico" />
+    <Resource Include="assets\generos\drama.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\Terror.png" />
+    <Resource Include="assets\generos\Terror.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\scifi.png" />
+    <Resource Include="assets\generos\scifi.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\iconos\icono.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\imagenes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="assets\simpson.png" />
   </ItemGroup>
