@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace JuegoPeliculas
 {
-    
-    class MainWindowsMv: ObservableObject
+
+    class MainWindowsMv : ObservableObject
     {
         private ObservableCollection<Pelicula> listaPeliculas;
 
         public ObservableCollection<Pelicula> ListaPeliculas
         {
             get { return listaPeliculas; }
-            set { SetProperty(ref listaPeliculas,value); }
+            set { SetProperty(ref listaPeliculas, value); }
         }
         private int total;
 
@@ -82,7 +82,7 @@ namespace JuegoPeliculas
             set
             {
                 actual = value;
-                SetProperty(ref actual,value);
+                SetProperty(ref actual, value);
             }
         }
 
@@ -91,7 +91,7 @@ namespace JuegoPeliculas
         public bool Accion
         {
             get { return accion; }
-            set { SetProperty(ref accion,value); }
+            set { SetProperty(ref accion, value); }
 
         }
         private bool comedia;
@@ -141,6 +141,8 @@ namespace JuegoPeliculas
             Total = ListaPeliculas.Count;
             Actual = 1;
         }
+
+      
 
         public void Siguiente()
         {

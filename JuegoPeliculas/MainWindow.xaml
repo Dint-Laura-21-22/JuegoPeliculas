@@ -15,8 +15,9 @@
         MaxHeight="1200"
         MaxWidth="1400">
     <Window.Resources>
+        <local:visibilityconverter x:Key="converterVisibility"></local:visibilityconverter>
         <!--Titulos-->
-        <local:visibilityconvert x:Key="conversorVisibilidad"></local:<Unknown>>
+
         <Style TargetType="{x:Type TextBlock}"
                x:Key="Titulos">
             <Setter Property="FontFamily"
@@ -142,6 +143,15 @@
             <Setter Property="Margin"
                     Value="3"></Setter>
         </Style>
+        <!--Estilo iconos generos-->
+        <Style TargetType="Image"
+               x:Key="EstiloIconosGeneros">
+            <Setter Property="Width"
+                    Value="20"></Setter>
+            <Setter Property="Height"
+                    Value="2"></Setter>
+
+        </Style>
         <!--DataTemplate para las peliculas de gestión-->
         <DataTemplate x:Name="PlantillaItemsGestion"
                       DataType="{x:Type local:Pelicula}">
@@ -169,10 +179,11 @@
             </Border>
         </DataTemplate>
         <!--Triger para opacidad pista-->
-        <Style TargetType="TextBox" x:Name="PistaenTextBox">
+        <Style TargetType="TextBox"
+               x:Name="PistaenTextBox">
             <Setter Property="Effect">
                 <Setter.Value>
-                    <BlurEffect Radius="5"/>
+                    <BlurEffect Radius="5" />
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
@@ -186,6 +197,7 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+
     </Window.Resources>
     <Grid>
         <TabControl Background="MediumPurple">
@@ -252,7 +264,7 @@
                                     Width="200"
                                     HorizontalAlignment="Left"
                                     Margin="0,-52,0,0">
-                                <TextBlock Text="{Binding Path=Puntuacion}"/>
+                                <TextBlock Text="{Binding Path=Puntuacion}" />
                             </Border>
                         </StackPanel>
                         <StackPanel DockPanel.Dock="Bottom"
@@ -265,8 +277,8 @@
                                        HorizontalAlignment="Left"
                                        Margin="10,0,0,0"></TextBlock>
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Style="{StaticResource EstiloTextBoxGestion}" 
-                                    Height="30"
+                                <TextBox Style="{StaticResource EstiloTextBoxGestion}"
+                                         Height="30"
                                          Width="293"
                                          HorizontalAlignment="Left"
                                          Margin="10,0,0,0" />
@@ -278,8 +290,8 @@
                                         Template="{DynamicResource BotonesJuego}"
                                         Style="{StaticResource EstiloBotonesJuego}" />
                             </StackPanel>
-                            <CheckBox x:Name="PistaCheckBox" 
-                                Content="Ver Pista"
+                            <CheckBox x:Name="PistaCheckBox"
+                                      Content="Ver Pista"
                                       Margin="10"
                                       FontFamily="Times New Roman"
                                       Template="{DynamicResource CheckBoxControlTemplate1}"></CheckBox>
@@ -289,11 +301,26 @@
                             </TextBox>
                             <UniformGrid HorizontalAlignment="Center"
                                          Rows="2">
-                                <Image/>
-                                <Image/>
-                                <Image/>
-                                <Image/>
-                                <Image/>
+                                <Image Style="{StaticResource EstiloIconosGeneros}"
+                                       Source="assets/generos/action.png"
+                                       ToolTip="Accion"
+                                       Visibility="{Binding Path=Accion,Converter={StaticResource converterVisibility}}" />
+                                <Image Style="{StaticResource EstiloIconosGeneros}"
+                                       Source="assets/generos/scifi.png"
+                                       ToolTip="Ciencia Ficcion"
+                                       Visibility="{Binding Path=CienciaFiccion, Converter={StaticResource converterVisibility}}" />
+                                <Image Style="{StaticResource EstiloIconosGeneros}"
+                                       Source="assets/generos/Terror.png"
+                                       ToolTip="Terror"
+                                       Visibility="{Binding Path=Terror, Converter={StaticResource converterVisibility}}" />
+                                <Image Style="{StaticResource EstiloIconosGeneros}"
+                                       Source="assets/generos/drama.ico"
+                                       ToolTip="Drama"
+                                       Visibility="{Binding Path=Drama,Converter={StaticResource converterVisibility}}"/>
+                                <Image Style="{StaticResource EstiloIconosGeneros}"
+                                       Source="assets/generos/comedia.ico"
+                                       ToolTip="Comedia"
+                                       Visibility="{Binding Path=Comedia, Converter={StaticResource converterVisibility}}"/>
 
                                 <TextBlock Style="{StaticResource Titulos}"
                                            Text="Accion">

@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace JuegoPeliculas.convertidores
+namespace JuegoPeliculas
 {
     class visibilityconverter : IValueConverter
     {
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((bool)value)
-                return Visibility.Visible;
-            else
-                return Visibility.Collapsed;
+           switch (value.ToString().ToLower())
 
         }
 
