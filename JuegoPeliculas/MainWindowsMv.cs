@@ -86,6 +86,44 @@ namespace JuegoPeliculas
             }
         }
 
+        private bool accion;
+
+        public bool Accion
+        {
+            get { return accion; }
+            set { SetProperty(ref accion,value); }
+
+        }
+        private bool comedia;
+        public bool Comedia
+        {
+            get { return comedia; }
+            set { SetProperty(ref comedia, value); }
+        }
+
+        private bool cienciaFiccion;
+        public bool CienciaFiccion
+        {
+            get { return cienciaFiccion; }
+            set { SetProperty(ref cienciaFiccion, value); }
+        }
+
+        private bool terror;
+        public bool Terror
+        {
+            get { return terror; }
+            set { SetProperty(ref terror, value); }
+        }
+
+        private bool drama;
+        public bool Drama
+        {
+            get { return drama; }
+            set { SetProperty(ref drama, value); }
+        }
+
+
+
         public static ObservableCollection<Pelicula> CargarListaPeliculas()
         {
             ObservableCollection<Pelicula> listaPeliculas = new ObservableCollection<Pelicula>();

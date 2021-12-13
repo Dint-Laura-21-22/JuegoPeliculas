@@ -87,7 +87,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="visibilityconverter.cs" />
     <Compile Include="MainWindowsMv.cs" />
+    <Compile Include="Partida.cs" />
     <Compile Include="Pelicula.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
