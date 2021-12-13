@@ -12,8 +12,8 @@
         MinWidth="600"
         Background="MediumPurple"
         Icon="/assets/iconos/icono.ico"
-        MaxHeight="1000"
-        MaxWidth="1200">
+        MaxHeight="1200"
+        MaxWidth="1400">
     <Window.Resources>
         <!--Titulos-->
         <Style TargetType="{x:Type TextBlock}"
@@ -174,6 +174,16 @@
                     <BlurEffect Radius="5"/>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=PistaCheckBox, Path=IsChecked}"
+                             Value="True">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <BlurEffect Radius="0" />
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
     <Grid>
@@ -269,9 +279,9 @@
                             <CheckBox x:Name="PistaCheckBox" 
                                 Content="Ver Pista"
                                       Margin="10"
-                                      FontFamily="Times New Roman"></CheckBox>
+                                      FontFamily="Times New Roman"
+                                      Template="{DynamicResource CheckBoxControlTemplate1}"></CheckBox>
                             <TextBox x:Name="PistaTextBox"
-                                     
                                      Text="{Binding Path=PeliculaSeleccionada.Pista}"
                                      Margin="10">
                             </TextBox>
