@@ -27,7 +27,6 @@ namespace JuegoPeliculas
             get { return total; }
             set
             {
-                total = value;
                 SetProperty(ref total, value);
             }
         }
@@ -81,48 +80,14 @@ namespace JuegoPeliculas
             get { return actual; }
             set
             {
-                actual = value;
                 SetProperty(ref actual, value);
             }
         }
 
-        private bool accion;
-
-        public bool Accion
-        {
-            get { return accion; }
-            set { SetProperty(ref accion, value); }
-
-        }
-        private bool comedia;
-        public bool Comedia
-        {
-            get { return comedia; }
-            set { SetProperty(ref comedia, value); }
-        }
-
-        private bool cienciaFiccion;
-        public bool CienciaFiccion
-        {
-            get { return cienciaFiccion; }
-            set { SetProperty(ref cienciaFiccion, value); }
-        }
-
-        private bool terror;
-        public bool Terror
-        {
-            get { return terror; }
-            set { SetProperty(ref terror, value); }
-        }
-
-        private bool drama;
-        public bool Drama
-        {
-            get { return drama; }
-            set { SetProperty(ref drama, value); }
-        }
+        
 
 
+        /* Mover a un servicio del JSON para que cargue*/
 
         public static ObservableCollection<Pelicula> CargarListaPeliculas()
         {
@@ -137,7 +102,7 @@ namespace JuegoPeliculas
             CrearListaGeneros();
             CrearListaDificultad();
             ListaPeliculas = CargarListaPeliculas();
-            PeliculaSeleccionada = ListaPeliculas[0];
+            PeliculaSeleccionada = ListaPeliculas[0];/* Moverlo a la clase partida */
             Total = ListaPeliculas.Count;
             Actual = 1;
         }

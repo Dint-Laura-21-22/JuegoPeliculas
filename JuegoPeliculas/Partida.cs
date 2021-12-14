@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace JuegoPeliculas
 {
     class Partida : ObservableObject
@@ -12,10 +13,15 @@ namespace JuegoPeliculas
         private bool partidaIniciada;
         private int puntuacion;
 
+
+
+
+
+
         public bool PartidaIniciada
         {
             get { return partidaIniciada; }
-            set { SetProperty(ref partidaIniciada,value); }
+            set { SetProperty(ref partidaIniciada, value); }
         }
 
         public int Puntuacion
@@ -24,6 +30,9 @@ namespace JuegoPeliculas
             set { SetProperty(ref puntuacion, value); }
         }
 
+        public Partida{
+        PartidaIniciada = Peliculas.
+        }
 
-    }
+}
 }

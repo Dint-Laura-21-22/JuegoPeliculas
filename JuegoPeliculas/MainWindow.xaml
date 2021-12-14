@@ -12,10 +12,41 @@
         MinWidth="600"
         Background="MediumPurple"
         Icon="/assets/iconos/icono.ico"
-        MaxHeight="1200"
-        MaxWidth="1400">
+        MaxHeight="900"
+        MaxWidth="1200">
     <Window.Resources>
-        <local:visibilityconverter x:Key="converterVisibility"></local:visibilityconverter>
+
+        <Style TargetType="{x:Type Image}"
+               x:Key="VisibilidadGenero">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=PeliculaSeleccionada.Genero}"
+                             Value="Acción">
+                    <Setter Property="Source"
+                            Value="/assets/generos/action.png"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=PeliculaSeleccionada.Genero}"
+                             Value="Ciencia-Ficción">
+                    <Setter Property="Source"
+                            Value="/assets/generos/scifi.png"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=PeliculaSeleccionada.Genero}"
+                             Value="Comedia">
+                    <Setter Property="Source"
+                            Value="/assets/generos/comedia.ico"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=PeliculaSeleccionada.Genero}"
+                             Value="Terror">
+                    <Setter Property="Source"
+                            Value="/assets/generos/terror.png"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=PeliculaSeleccionada.Genero}"
+                             Value="Drama">
+                    <Setter Property="Source"
+                            Value="/assets/generos/drama.ico"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+            
+        </Style>
         <!--Titulos-->
 
         <Style TargetType="{x:Type TextBlock}"
@@ -178,12 +209,40 @@
                 </StackPanel>
             </Border>
         </DataTemplate>
+        <Style TargetType="{x:Type Image}"
+               x:Key="DificultadVisibilidad">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=PeliculaSeleccionada.Nivel}" Value="Fácil">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <BlurEffect Radius="25" />
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=PeliculaSeleccionada.Nivel}"
+                             Value="Media">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <BlurEffect Radius="40" />
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=PeliculaSeleccionada.Nivel}"
+                             Value="Difícil">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <BlurEffect Radius="80" />
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
         <!--Triger para opacidad pista-->
         <Style TargetType="TextBox"
                x:Name="PistaenTextBox">
             <Setter Property="Effect">
                 <Setter.Value>
-                    <BlurEffect Radius="5" />
+                    <BlurEffect Radius="10" />
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
@@ -230,13 +289,10 @@
                                 <TextBlock Text="Cartel de la película"
                                            Style="{StaticResource Titulos}"
                                            FontSize="30"></TextBlock>
-                                <Image Source="{Binding Path=PeliculaSeleccionada.Cartel}"
-                                       Stretch="UniformToFill"
+                                <Image Style="{StaticResource DificultadVisibilidad}" 
+                                       Source="{Binding Path=PeliculaSeleccionada.Cartel}"
+                                    Stretch="UniformToFill"
                                        Margin="20">
-                                    <Image.Effect>
-                                        <BlurEffect Radius="50" />
-                                    </Image.Effect>
-
                                 </Image>
                             </StackPanel>
                         </Border>
@@ -277,7 +333,8 @@
                                        HorizontalAlignment="Left"
                                        Margin="10,0,0,0"></TextBlock>
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Style="{StaticResource EstiloTextBoxGestion}"
+                                <TextBox 
+                                    Style="{StaticResource EstiloTextBoxGestion}"
                                          Height="30"
                                          Width="293"
                                          HorizontalAlignment="Left"
@@ -301,42 +358,11 @@
                             </TextBox>
                             <UniformGrid HorizontalAlignment="Center"
                                          Rows="2">
-                                <Image Style="{StaticResource EstiloIconosGeneros}"
-                                       Source="assets/generos/action.png"
-                                       ToolTip="Accion"
-                                       Visibility="{Binding Path=Accion,Converter={StaticResource converterVisibility}}" />
-                                <Image Style="{StaticResource EstiloIconosGeneros}"
-                                       Source="assets/generos/scifi.png"
-                                       ToolTip="Ciencia Ficcion"
-                                       Visibility="{Binding Path=CienciaFiccion, Converter={StaticResource converterVisibility}}" />
-                                <Image Style="{StaticResource EstiloIconosGeneros}"
-                                       Source="assets/generos/Terror.png"
-                                       ToolTip="Terror"
-                                       Visibility="{Binding Path=Terror, Converter={StaticResource converterVisibility}}" />
-                                <Image Style="{StaticResource EstiloIconosGeneros}"
-                                       Source="assets/generos/drama.ico"
-                                       ToolTip="Drama"
-                                       Visibility="{Binding Path=Drama,Converter={StaticResource converterVisibility}}"/>
-                                <Image Style="{StaticResource EstiloIconosGeneros}"
-                                       Source="assets/generos/comedia.ico"
-                                       ToolTip="Comedia"
-                                       Visibility="{Binding Path=Comedia, Converter={StaticResource converterVisibility}}"/>
-
+                                <Image Width="50" Style="{StaticResource VisibilidadGenero}"/>
                                 <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Accion">
+                                           Text="{Binding Path=PeliculaSeleccionada.Genero}">
                                 </TextBlock>
-                                <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Ciencia-Ficcion">
-                                </TextBlock>
-                                <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Terror">
-                                </TextBlock>
-                                <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Drama">
-                                </TextBlock>
-                                <TextBlock Style="{StaticResource Titulos}"
-                                           Text="Comedia">
-                                </TextBlock>
+                             
                             </UniformGrid>
                             <StackPanel Orientation="Horizontal"
                                         DockPanel.Dock="Bottom"
