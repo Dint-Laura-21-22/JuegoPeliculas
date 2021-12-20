@@ -13,6 +13,7 @@ namespace JuegoPeliculas
 
     class MainWindowsMv : ObservableObject
     {
+      
         servicios.ServicioJson servicioJson = new servicios.ServicioJson();
 
         private String intentoAdivinarUsuario;
@@ -94,10 +95,16 @@ namespace JuegoPeliculas
             }
         }
 
+        private Partida puntuacion = new Partida();
+        public Partida Puntuacion
+        {
+            get { return puntuacion; }
+            set
+            {
+                SetProperty(ref puntuacion, value);
+            }
+        }
 
-
-
-        /* Mover a un servicio del JSON para que cargue*/
 
        
 
@@ -110,6 +117,7 @@ namespace JuegoPeliculas
             PeliculaSeleccionada = ListaPeliculas[0];/* Moverlo a la clase partida */
             Total = ListaPeliculas.Count;
             Actual = 1;
+            Puntuacion = puntuacion;
         }
 
 

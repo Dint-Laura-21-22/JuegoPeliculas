@@ -13,10 +13,9 @@ namespace JuegoPeliculas
         private bool partidaIniciada;
         private int puntuacion;
 
-
-
-
-
+        public Partida()
+        {
+        }
 
         public bool PartidaIniciada
         {
@@ -33,7 +32,7 @@ namespace JuegoPeliculas
         public Partida(bool partidaIniciada, int puntuacion)
         {
             PartidaIniciada = partidaIniciada;
-            Puntuacion = puntuacion;
+            Puntuacion = 0;
         }
     }
 }
