@@ -13,6 +13,16 @@ namespace JuegoPeliculas
 
     class MainWindowsMv : ObservableObject
     {
+        servicios.ServicioJson servicioJson = new servicios.ServicioJson();
+
+        private String intentoAdivinarUsuario;
+
+        public String IntentoAdivinarUsuario
+        {
+            get { return IntentoAdivinarUsuario; }
+            set { SetProperty(ref intentoAdivinarUsuario, value); }
+        }
+
         private ObservableCollection<Pelicula> listaPeliculas;
 
         public ObservableCollection<Pelicula> ListaPeliculas
@@ -84,30 +94,26 @@ namespace JuegoPeliculas
             }
         }
 
-        
+
 
 
         /* Mover a un servicio del JSON para que cargue*/
 
-        public static ObservableCollection<Pelicula> CargarListaPeliculas()
-        {
-            ObservableCollection<Pelicula> listaPeliculas = new ObservableCollection<Pelicula>();
-            String peliculasJson = File.ReadAllText("peliculas.json");
-            listaPeliculas = JsonConvert.DeserializeObject<ObservableCollection<Pelicula>>(peliculasJson);
-            return listaPeliculas;
-        }
+       
 
         public MainWindowsMv()
         {
+           
             CrearListaGeneros();
             CrearListaDificultad();
-            ListaPeliculas = CargarListaPeliculas();
+            ListaPeliculas = servicioJson.CargarJson();
             PeliculaSeleccionada = ListaPeliculas[0];/* Moverlo a la clase partida */
             Total = ListaPeliculas.Count;
             Actual = 1;
         }
 
-      
+
+
 
         public void Siguiente()
         {
@@ -125,6 +131,11 @@ namespace JuegoPeliculas
                 Actual--;
                 PeliculaSeleccionada = ListaPeliculas[Actual - 1];
             }
+        }
+
+        public void QuitarSeleccion()
+        {
+            PeliculaSeleccionada = null;
         }
 
 

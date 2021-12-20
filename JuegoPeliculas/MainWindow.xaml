@@ -98,7 +98,7 @@
             <Setter Property="HorizontalAlignment"
                     Value="Center"></Setter>
         </Style>
-        <!--Titulos gestion-->
+        <!--Titulos gestion peliculas-->
         <Style TargetType="{x:Type TextBlock}"
                x:Key="TitulosGestionPeliculas">
             <Setter Property="FontFamily"
@@ -469,12 +469,14 @@
                             <TextBox Grid.Column="1"
                                      Grid.Row="0"
                                      Template="{DynamicResource TextBoxGestion}"
-                                     Style="{StaticResource EstiloTextBoxGestion}">
+                                     Style="{StaticResource EstiloTextBoxGestion}"
+                                     Text="{Binding Path=PeliculaSeleccionada.Titulo}">
                             </TextBox>
                             <TextBox Grid.Column="1"
                                      Grid.Row="1"
                                      Template="{DynamicResource TextBoxGestion}"
-                                     Style="{StaticResource EstiloTextBoxGestion}">
+                                     Style="{StaticResource EstiloTextBoxGestion}"
+                                     Text="{Binding Path=PeliculaSeleccionada.Pista}">
                             </TextBox>
                             <StackPanel Grid.Column="1"
                                         Grid.Row="2"
@@ -482,6 +484,7 @@
                                 <TextBox HorizontalAlignment="Left"
                                          Template="{DynamicResource TextBoxGestion}"
                                          Style="{StaticResource EstiloTextBoxGestion}"
+                                         Text="{Binding Path=PeliculaSeleccionada.Cartel}"
                                          Width="293"
                                          Margin="0,0,3,0"
                                          Padding="2" />
@@ -498,12 +501,14 @@
                                         Orientation="Horizontal">
                                 <ComboBox HorizontalAlignment="Left"
                                           Width="80"
+                                          DataContext="{Binding Path= PeliculaSeleccionada.Nivel}"
                                           ItemsSource="{Binding Path=Dificultad}">
                                 </ComboBox>
                                 <TextBlock Style="{StaticResource ResourceKey=TitulosGestion}"
                                            Text="Generos"
                                            Margin="0,0,10,0" />
-                                <ComboBox ItemsSource="{Binding Path=Genero}"
+                                <ComboBox DataContext="{Binding Path= PeliculaSeleccionada.Genero}"
+                                          ItemsSource="{Binding Path=Genero}"
                                           Width="101">
                                 </ComboBox>
                             </StackPanel>

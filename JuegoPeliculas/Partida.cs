@@ -30,9 +30,10 @@ namespace JuegoPeliculas
             set { SetProperty(ref puntuacion, value); }
         }
 
-        public Partida{
-        PartidaIniciada = Peliculas.
+        public Partida(bool partidaIniciada, int puntuacion)
+        {
+            PartidaIniciada = partidaIniciada;
+            Puntuacion = puntuacion;
         }
-
-}
+    }
 }

@@ -90,6 +90,7 @@
     <Compile Include="MainWindowsMv.cs" />
     <Compile Include="Partida.cs" />
     <Compile Include="Pelicula.cs" />
+    <Compile Include="servicios\ServicioJson.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
